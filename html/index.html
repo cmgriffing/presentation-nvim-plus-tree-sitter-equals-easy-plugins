@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>01-intro</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reset.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level2">
+
+<style>
+  .opening-title {
+    text-align: right;
+  }
+
+  .awesome {
+    padding-left: 200px;
+    position: relative;
+  }
+
+  .awesome::before {
+    content: "";
+    background: #333;
+    width: 100%;
+    height: 8px;
+    position: absolute;
+    top: -6px;
+    left: 0;
+    box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgb(0 0 0 / 10%), 0 0 5px rgb(0 0 0 / 10%), 0 1px 3px rgb(0 0 0 / 30%), 0 3px 5px rgb(0 0 0 / 20%), 0 5px 10px rgb(0 0 0 / 25%), 0 20px 20px rgb(0 0 0 / 15%);
+  }
+
+</style>
+<h1 class="opening-title">
+nvim<br /> + treesitter<br /><span class="awesome">awesome</span>
+</h1>
+</section>
+<section id="who-am-i" class="slide level2">
+<h2>Who am I?</h2>
+<p><img height="200" width="200" src="./assets/selfportrait.jpeg"></p>
+<ul>
+<li>Twitch: <a href="https://www.twitch.tv/cmgriffing">https://www.twitch.tv/cmgriffing</a></li>
+<li>Github: <a href="https://github.com/cmgriffing">https://github.com/cmgriffing</a></li>
+<li>Twitter: <a href="https://twitter.com/cmgriffing">https://twitter.com/cmgriffing</a></li>
+<li>Blog: <a href="https://chrisgriffing.com">https://chrisgriffing.com</a></li>
+</ul>
+<aside class="notes">
+<p>just someone who likes to stream working on side projects to maintain accountability</p>
+</aside>
+</section>
+<section><section id="relevant-terms" class="title-slide slide level1"><h1>Relevant Terms</h1></section><section id="tree-sitter" class="slide level2">
+<h2>tree-sitter</h2>
+<figure>
+<img data-src="./assets/tree-sitter-small.png" alt="" /><figcaption>tree sitter logo</figcaption>
+</figure>
+<p><a href="https://tree-sitter.github.io/tree-sitter/">https://tree-sitter.github.io/tree-sitter/</a></p>
+<aside class="notes">
+<ul>
+<li><p>gives direct access to an AST</p></li>
+<li><p>even compiles to WASM for browser usage (how it worked in VSCode)</p></li>
+</ul>
+</aside>
+</section><section id="ast" class="slide level2">
+<h2>AST</h2>
+<p><strong>A</strong>bstract <strong>S</strong>yntax <strong>T</strong>ree: representation of the abstract syntactic structure of text (often source code) written in a formal language. Each node of the tree denotes a construct occurring in the text.</p>
+<p><a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">https://en.wikipedia.org/wiki/Abstract_syntax_tree</a></p>
+<aside class="notes">
+<p>the data your code could be broken down to to make compiler level decisions</p>
+</aside>
+</section><section id="lua" class="slide level2">
+<h2>lua</h2>
+<p>Portuguese for “moon”</p>
+<ul>
+<li>interesting history</li>
+<li>1 indexed</li>
+<li>similar syntax to js (let me explain)</li>
+</ul>
+</section><section id="luajs-side-by-side" class="slide level2">
+<h2>lua/js (side by side)</h2>
+<figure>
+<img data-src="./assets/js-to-lua.png" alt="" /><figcaption>JS to Lua diff</figcaption>
+</figure>
+<aside class="notes">
+<ul>
+<li>brackets -&gt; end</li>
+<li>let/var/const -&gt; local</li>
+</ul>
+</aside>
+</section></section>
+<section><section id="biscuits-history" class="title-slide slide level1"><h1>Biscuits (history)</h1></section><section id="inspiration" class="slide level2">
+<h2>Inspiration</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter">VSCode Flutter Plugin:</a></p>
+<figure>
+<img data-src="./assets/flutter_hot_reload.gif" alt="" /><figcaption>Flutter example</figcaption>
+</figure>
+</section><section id="vscode" class="slide level2">
+<h2>VSCode</h2>
+<p><img height="200" width="200" src="./assets/biscuits-logo.svg" /></p>
+<p><a href="https://code-biscuits.github.io/">https://code-biscuits.github.io/</a></p>
+<p><a href="https://github.com/code-biscuits/assorted-biscuits/">https://github.com/code-biscuits/assorted-biscuits/</a></p>
+<aside class="notes">
+<p>Assorted biscuits in VSCode works for several languages</p>
+<p>some dont compile to WASM (could be user error)</p>
+<p>could run in browser… (wink wink nudge nudge)</p>
+</aside>
+</section><section id="thanks-teej" class="slide level2">
+<h2>Thanks Teej</h2>
+<p>One fateful day</p>
+<aside class="notes">
+<ul>
+<li><p>teej mentioned that neovim had virtual text and tree sitter support</p></li>
+<li><p>I have enough friends that use nvim, why not port it</p></li>
+</ul>
+</aside>
+</section></section>
+<section id="brief-demo" class="title-slide slide level1"><h1>Brief Demo</h1><aside class="notes">
+<p>show nvim biscuits:</p>
+<ul>
+<li>html</li>
+<li>lua</li>
+<li>rust</li>
+<li>js</li>
+<li>go</li>
+</ul>
+<p>some are flaky still:</p>
+<ul>
+<li>python</li>
+<li>probably more</li>
+</ul>
+</aside></section>
+<section><section id="biscuits-technical" class="title-slide slide level1"><h1>Biscuits (technical)</h1></section><section id="init" class="slide level2">
+<h2>Init</h2>
+<p><img data-src="./assets/init.png" /></p>
+</section><section id="config" class="slide level2">
+<h2>Config</h2>
+<p><img data-src="./assets/tree-sitter-config.png" /></p>
+</section><section id="options" class="slide level2">
+<h2>Options</h2>
+<p><img data-src="./assets/config.png" /></p>
+</section><section id="adding-the-virtual-text" class="slide level2">
+<h2>Adding the Virtual Text</h2>
+<p><img data-src="./assets/virtual-text.png" /></p>
+<aside class="notes">
+
+</aside>
+</section><section id="highlight-groups" class="slide level2">
+<h2>Highlight Groups</h2>
+<p>A container for all Virtual Text instances</p>
+<p>Use your own or you will break other plugins</p>
+<aside class="notes">
+
+</aside>
+</section><section id="use-the-right-hook" class="slide level2">
+<h2>Use the right hook</h2>
+<p>Some hooks fire OFTEN</p>
+<aside class="notes">
+<p>if your plugin is slow you will make nvim slow</p>
+<p>nobody likes that</p>
+</aside>
+</section></section>
+<section><section id="nvim-plugins" class="title-slide slide level1"><h1>nvim plugins</h1></section><section id="api-and-resources" class="slide level2">
+<h2>API and Resources</h2>
+<p><a href="https://neovim.io/doc/general/">General neovim docs</a></p>
+<aside class="notes">
+<ul>
+<li><p>mention docs website</p></li>
+<li><p>searching within neovim is preferred by many people</p></li>
+</ul>
+</aside>
+</section><section id="autocmd" class="slide level2">
+<h2>autocmd</h2>
+<p><a href="https://neovim.io/doc/user/autocmd.html">https://neovim.io/doc/user/autocmd.html</a></p>
+</section><section id="tree-sitter-1" class="slide level2">
+<h2>tree-sitter</h2>
+<p><a href="https://neovim.io/doc/user/treesitter.html">https://neovim.io/doc/user/treesitter.html</a></p>
+</section><section id="core-api" class="slide level2">
+<h2>core api</h2>
+<p><a href="https://neovim.io/doc/user/api.html">https://neovim.io/doc/user/api.html</a></p>
+</section><section id="other-plugins" class="slide level2">
+<h2>Other plugins</h2>
+<p>Smaller:</p>
+<ul>
+<li>Harpoon: <a href="https://github.com/ThePrimeagen/harpoon">https://github.com/ThePrimeagen/harpoon</a></li>
+</ul>
+<p>Larger:</p>
+<ul>
+<li>Telescope: <a href="https://github.com/nvim-telescope/telescope.nvim">https://github.com/nvim-telescope/telescope.nvim</a></li>
+<li><a href="https://github.com/voldikss/vim-floaterm"></a></li>
+</ul>
+<aside class="notes">
+<p>Good examples of plugins I learned from</p>
+<p>Smaller plugins:</p>
+<ul>
+<li>easy to digest</li>
+<li>can maintain functionality in working memory</li>
+</ul>
+<p>Larger plugins:</p>
+<ul>
+<li>how to split functionality to smaller scopes</li>
+<li>more devops, testing, structure</li>
+</ul>
+</aside>
+</section></section>
+<section><section id="citations-and-links" class="title-slide slide level1"><h1>Citations And Links</h1></section><section id="wrapping-up" class="slide level2">
+<h2>Wrapping Up</h2>
+<p>Other editors?</p>
+<aside class="notes">
+<p>if editors have virtual text or something like it we are good</p>
+<p>Thanks</p>
+</aside>
+</section><section class="slide level2">
+
+<h1 class="blink">
+Applause
+</h1>
+<style>
+/* Global Styles go here */
+.blink {
+  animation: blinker 1s ease infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+</style>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
