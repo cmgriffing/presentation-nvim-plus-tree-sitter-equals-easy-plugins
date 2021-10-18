@@ -1,6 +1,8 @@
-# Brief Demo
+# Brief Examples
 
 <div class="notes">
+
+prerecorded gif(s)
 
 show nvim biscuits:
 

@@ -31,7 +31,7 @@ Smaller:
 Larger:
 
 - Telescope: [https://github.com/nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- [](https://github.com/voldikss/vim-floaterm)
+- Floaterm [https://github.com/voldikss/vim-floaterm](https://github.com/voldikss/vim-floaterm)
 
 <div class="notes">
 Good examples of plugins I learned from

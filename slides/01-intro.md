@@ -21,7 +21,7 @@
 
 </style>
 
-<h1 class="opening-title">nvim<br /> + treesitter<br /><span class="awesome">awesome</span></h1>
+<h1 class="opening-title">nvim<br /> + treesitter<br /><span class="awesome">easy plugins</span></h1>
 
 ## Who am I?
 

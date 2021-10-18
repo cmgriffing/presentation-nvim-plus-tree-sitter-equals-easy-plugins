@@ -22,16 +22,26 @@
 
 ## Highlight Groups
 
+![](./assets/highlight-group.png)
+
+<div class="notes">
 A container for all Virtual Text instances
 
 Use your own or you will break other plugins
 
-<div class="notes">
 </div>
+
+## Treesitter (parser)
+
+![](./assets/tree-sitter-parser.png)
+
+## Treesitter (nodes)
+
+![](./assets/tree-sitter-nodes.png)
 
 ## Use the right hook
 
-Some hooks fire OFTEN
+![](./assets/autocmd.png)
 
 <div class="notes">
 if your plugin is slow you will make nvim slow
