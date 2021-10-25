@@ -49,3 +49,9 @@ if your plugin is slow you will make nvim slow
 nobody likes that
 
 </div>
+
+## Dr. Frankenstein must have worked out all the time.
+
+## He was a bodybuilder, after all.
+
+![](./assets/frankenstein.gif)

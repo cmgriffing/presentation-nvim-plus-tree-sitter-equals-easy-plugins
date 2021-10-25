@@ -8,7 +8,7 @@
 - mention docs website
 
 - searching within neovim is preferred by many people
-</div>
+  </div>
 
 ## autocmd
 
@@ -47,3 +47,9 @@ Larger plugins:
 - more devops, testing, structure
 
 </div>
+
+## Why didn’t the zombie like eating the clown?
+
+## He tasted funny.
+
+![](./assets/zombie.gif)

@@ -43,3 +43,9 @@ Portuguese for "moon"
 - let/var/const -> local
 
 </div>
+
+## What would be the national holiday for a nation of vampires?
+
+## Fangs-giving!
+
+![](./assets/fangsgiving.gif)

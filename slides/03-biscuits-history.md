@@ -43,3 +43,9 @@ could run in browser... (wink wink nudge nudge)
 - I also did some lua once 9 years ago, how hard could it be?
 
 </div>
+
+## What do you call two witches sharing an apartment?
+
+## Broommates
+
+![](./assets/broommates.gif)
