@@ -1,16 +1,38 @@
 # Brief Examples
 
+## Rust
+
+![](./assets/example-rust.gif)
+
+## Lua
+
+![](./assets/example-lua.png)
+
 <div class="notes">
 
-prerecorded gif(s)
+</div>
+
+## JS
+
+![](./assets/example-js.png)
+
+## Go
+
+![](./assets/example-go.png)
+
+<div class="notes">
 
 show nvim biscuits:
 
-- html
-- lua
 - rust
+- lua
+- html
 - js
 - go
+
+41 supported languages
+
+15 in development
 
 some are flaky still:
 

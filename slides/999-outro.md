@@ -1,8 +1,6 @@
-# Citations And Links
+# Wrapping Up
 
-## Wrapping Up
-
-Other editors?
+## Other editors?
 
 <div class="notes">
 
